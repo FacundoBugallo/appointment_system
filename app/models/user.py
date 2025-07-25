@@ -1,11 +1,12 @@
 from sqlalchemy import Column, Integer, String, Boolean, Enum
 from app.db import Base
-import enum
+import enum #Importa el módulo enum para definir enumeraciones en Python.
 
 class UserRole(enum.Enum):
   admin = "admin"
   staff = "staff"
   client = "client"
+# Define una enumeración llamada UserRole con tres posibles valores: admin, staff y client.
 
 class User(Base):
   __tablename__ = "Users"

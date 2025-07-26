@@ -9,10 +9,10 @@ class AppointmentStatus(enum.Enum):
 class Appointment(base):
   __tablename_ = "appointments" 
 
-  id
-  client_id
-  professional_id
-  service_id
-  start_time
-  end_time
-  status
+  id = Column(Integer, primary_key=True)
+  client_id = Column(Integer, ForeignKey("Users.id"))
+  professional_id = Column(Integer, ForeignKey("Users.id"))
+  service_id = Column(Integer, ForeignKey("services.id"))
+  start_time = Column(Datatime)
+  end_time = Column(Datatime)
+  status = Column(Enum(AppointmentStatus), default=AppointmentStatus.pendiente)

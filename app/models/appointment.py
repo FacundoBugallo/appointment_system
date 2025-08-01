@@ -6,7 +6,7 @@ class AppointmentStatus(enum.Enum):
   confirmado = "confirmado"
   cancelado = "cancelado"
 
-class Appointment(base):
+class Appointment(Base):
   __tablename_ = "appointments" 
 
   id = Column(Integer, primary_key=True)
